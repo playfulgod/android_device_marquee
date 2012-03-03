@@ -1,29 +1,28 @@
-#
-# system.prop for ignite
-#
-#
-# ADDITIONAL_DEFAULT_PROPERTIES
-#
+# LGE_CHANGE_S [shaun.hong@lge.com] 2011-06-04 turned on jit
 dalvik.vm.execution-mode=int:jit
-
-ro.cdma.home.operator.alpha=
-ro.cdma.home.operator.numeric=
-gsm.operator.alpha=
-gsm.operator.numeric=
-gsm.sim.operator.alpha=
-gsm.sim.operator.numeric=
+# LGE_CHANGE_E [shaun.hong@lge.com] 2011-06-04 turned on jit
+# NRB_CHANGES_S [jhseo@nuribom.com] 2011-09-01, [LG855] change operator.alpha for Boost Mobile
+#ro.cdma.home.operator.alpha=Sprint
+ro.cdma.home.operator.alpha=Boost Mobile
+# NRB_CHANGES_E [jhseo@nuribom.com] 2011-09-01, [LG855] change operator.alpha for Boost Mobile
+# NRB_CHANGE_S [ksjung@nuribom.com] 2011-09-08, Subscriber ID (MCC + 11_12 + MIN = 310 + 00 + MIN) (Boost Mobild Android Telephony Status)
+ro.cdma.home.operator.subscriber=31000
+#ro.cdma.home.operator.numeric=310120
+ro.cdma.home.operator.numeric=311870
+#gsm.operator.alpha=Sprint
+gsm.operator.alpha=Boost Mobile
+#gsm.operator.numeric=310120
+gsm.operator.numeric=311870
+gsm.sim.state=READY
+# NRB_CHANGE_E [ksjung@nuribom.com] 2011-09-08 (Boost Mobild Android Telephony Status)
 gsm.operator.iso-country=us
 #
 # ADDITIONAL_BUILD_PROPERTIES
 #
 user.feature.flex=true
-user.feature.lgdrm=true
 user.feature.lgresource=true
-user.feature.lgsetupwizard=true
-user.feature.lgpoweroff=true
 user.feature.preload_so=true
 user.feature.preload_del=true
-user.feature.lock_sui=true
 user.feature.sui=true
 user.feature.cmf=true
 user.feature.wapservice=true
@@ -34,16 +33,15 @@ user.feature.lgscroller=true
 user.feature.eventthrottle=true
 ro.lge.vibrator_amp=120
 ro.opengles.version=131072
-ro.setupwizard.mode=DISABLED
+ro.setupwizard.mode=OPTIONAL
 ro.com.google.gmsversion=2.3_r7
-ro.build.version.lge.sub=27
-ro.build.version.lge.binver=AS855ZV2_27
-ro.com.lge.fota.checksum=AS855ZV2_27
+ro.build.version.lge.sub=09
+ro.build.version.lge.binver=LG855ZV3_09
 ro.com.google.clientidbase=android-lge
-ro.com.google.clientidbase.ms=android-lge
-ro.com.google.clientidbase.am=android-lge
+ro.com.google.clientidbase.ms=android-boost-us
+ro.com.google.clientidbase.am=android-boost-us
 ro.com.google.clientidbase.gmm=android-lge
-ro.com.google.clientidbase.yt=android-lge
+ro.com.google.clientidbase.yt=android-boost-us
 rild.libpath=/system/lib/lge-ril.so
 ro.telephony.default_network=4
 ro.sf.lcd_density=240
@@ -55,15 +53,15 @@ ro.config.nocheckin=yes
 wifi.interface=wlan0
 alsa.mixer.capture.master=Analog
 ro.com.android.dateformat=MM-dd-yyyy
-ro.com.android.dataroaming=true
+ro.com.android.dataroaming=false
 dalvik.vm.heapsize=96m
 dalvik.vm.dexopt-flags=m=y
 ro.config.ringtone=Anticipation.ogg
-ro.config.notification_sound=Acoustic_Guitar.ogg
+ro.config.notification_sound=Echo.ogg
 ro.config.alarm_alert=Alarm_Beep_01.ogg
-persist.hidden_reset=0
+persist.hidden_reset=1
 persist.recovery_skip=0
-persist.hiddenreset.hidden_reset=0
+persist.hiddenreset.hidden_reset=1
 persist.hiddenreset.recovery_skip=0
 persist.hiddenreset.firstboot=0
 jpeg.libskiahw.decoder.enable=1
@@ -73,4 +71,3 @@ net.dns2=208.67.220.220
 ro.tether.denied=false
 net.bt.name=Android
 dalvik.vm.stack-trace-file=/data/anr/traces.txt
-
