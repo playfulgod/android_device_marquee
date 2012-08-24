@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/marquee.mk
+    $(LOCAL_DIR)/device_marquee.mk

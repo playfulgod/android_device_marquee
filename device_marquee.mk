@@ -7,9 +7,9 @@ $(call inherit-product-if-exists, vendor/lge/marquee/marquee-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/lge/marquee/overlay
 
-
+LOCAL_PATH := device/lge/marquee
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/lge/marquee/kernel
+	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -17,12 +17,9 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
-# Recovery Files
-PRODUCT_COPY_FILE += \
-    device/lge/marquee/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh 
-
 $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_marquee
 PRODUCT_DEVICE := marquee
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
